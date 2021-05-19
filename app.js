@@ -9,10 +9,10 @@ const users = require('./routes/usersRoute.js');
 const flows = require('./routes/flowsRoute.js');
 const config = require('./config.js');
 
-const MONGODB_URI = config.mongodburi || 'mongodb://localhost/basic-mern-app';
+const MONGODB_URI = config.mongodburi || 'mongodb://localhost:27017/basic-mern-app';
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect('mongodb://localhost:27017/basic-mern-app', {
+mongoose.connect(MONGODB_URI, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useCreateIndex: true
